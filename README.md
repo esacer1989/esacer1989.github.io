@@ -1,4 +1,4 @@
-# Привет! Я [Сергей] 👋
+# Привет! Я Сергей 👋
 
 **Аналитик данных** с опытом работы.
 
@@ -14,5 +14,5 @@
 
 ## 📫 Контакты
 - Email: [esacer2022@gmail.com]
-- Telegram: [@esacer]
+- Telegram: [https://t.me/Esacer]
 - Сайт-портфолио: [https://esacer1989.github.io](https://esacer1989.github.io)
