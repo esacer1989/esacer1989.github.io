@@ -3,150 +3,355 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Сергей — Data Analyst. Python, SQL, Pandas, A/B тесты, дашборды. Портфолио с реальными проектами.">
-    <meta name="keywords" content="Data Analyst, Python, SQL, Pandas, A/B тесты, аналитика данных">
+    <meta name="description" content="Сергей — Data Analyst. Python, SQL, A/B тесты, дашборды. Портфолио с реальными проектами аналитики данных.">
+    <meta name="keywords" content="Data Analyst, Python, SQL, аналитика данных, A/B тесты, Pandas, BI">
+    <meta name="author" content="Сергей">
     <title>Сергей — Data Analyst | Портфолио</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #2563eb; --primary-light: #3b82f6; --bg: #f8fafc; --card-bg: #ffffff; --text: #1e293b; --text-secondary: #64748b; --border: #e2e8f0; --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); --shadow-hover: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1); --radius: 12px; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-on-scroll { opacity: 0; animation: none; }
-        .animate-on-scroll.visible { animation: fadeInUp 0.6s ease forwards; }
-        .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 50%, #3b82f6 100%); color: white; text-align: center; padding: 80px 20px; position: relative; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.08) 0%, transparent 60%); }
-        .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
-        .hero h1 { font-size: 3em; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.02em; }
-        .hero .subtitle { font-size: 1.3em; font-weight: 300; opacity: 0.9; margin-bottom: 32px; }
-        .hero .contacts { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
-        .hero .contacts a { color: white; text-decoration: none; font-weight: 600; padding: 10px 24px; border: 2px solid rgba(255,255,255,0.3); border-radius: 50px; transition: all 0.3s; }
-        .hero .contacts a:hover { background: white; color: var(--primary); border-color: white; }
-        .container { max-width: 960px; margin: 0 auto; padding: 40px 20px; }
-        .section { background: var(--card-bg); padding: 40px; margin-bottom: 32px; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border); }
-        .section h2 { color: var(--primary); font-size: 1.8em; font-weight: 700; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid var(--border); }
-        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin-bottom: 32px; }
-        .stat-card { text-align: center; padding: 24px 16px; background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border); }
-        .stat-card .number { font-size: 2.5em; font-weight: 700; color: var(--primary); }
-        .stat-card .label { color: var(--text-secondary); font-size: 0.9em; margin-top: 4px; }
-        .project { margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
-        .project:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        .project-header h3 a { color: var(--text); text-decoration: none; font-size: 1.3em; font-weight: 600; transition: color 0.2s; }
-        .project-header h3 a:hover { color: var(--primary); }
-        .project .meta { display: flex; gap: 16px; color: var(--text-secondary); font-size: 0.9em; margin-bottom: 8px; flex-wrap: wrap; }
-        .project .description { color: var(--text-secondary); margin-bottom: 16px; }
-        .skills { display: flex; flex-wrap: wrap; gap: 8px; }
-        .skill { background: #eff6ff; color: var(--primary); padding: 4px 14px; border-radius: 20px; font-size: 0.85em; font-weight: 500; }
-        footer { text-align: center; padding: 32px 20px; color: var(--text-secondary); font-size: 0.9em; }
-        @media (max-width: 600px) { .hero h1 { font-size: 2em; } .hero .subtitle { font-size: 1.1em; } .section { padding: 24px; } .stats { grid-template-columns: repeat(2, 1fr); } }
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--primary:#2563eb;--accent:#60a5fa;--dark:#0f172a;--text:#334155;--text-light:#94a3b8;--bg:#f8fafc;--card:#ffffff;--border:#e2e8f0}
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+        /* Animated Background */
+        #particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+        /* Navigation */
+        nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(255,255,255,0.8);border-bottom:1px solid var(--border);transition:all 0.3s}
+        nav.scrolled{padding:12px 40px;box-shadow:0 4px 30px rgba(0,0,0,0.05)}
+        .nav-logo{font-weight:700;font-size:1.2em;color:var(--primary);text-decoration:none}
+        .nav-links{display:flex;gap:32px}
+        .nav-links a{color:var(--text);text-decoration:none;font-weight:500;font-size:0.9em;transition:color 0.3s;position:relative}
+        .nav-links a:hover{color:var(--primary)}
+        .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--primary);transition:width 0.3s}
+        .nav-links a:hover::after{width:100%}
+        /* Hero */
+        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;padding:120px 40px 80px;text-align:center}
+        .hero-bg{position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(180deg,rgba(37,99,235,0.03) 0%,transparent 100%)}
+        .hero-content{position:relative;z-index:1;max-width:800px;margin:0 auto}
+        .hero-greeting{font-size:1.1em;font-weight:300;color:var(--primary);margin-bottom:16px;letter-spacing:0.05em}
+        .hero h1{font-size:clamp(2.5em,6vw,4.5em);font-weight:700;color:var(--dark);margin-bottom:24px;line-height:1.1;letter-spacing:-0.03em}
+        .hero h1 span{background:linear-gradient(135deg,var(--primary),#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero .subtitle{font-size:1.3em;font-weight:300;color:var(--text-light);margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.6}
+        .hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;font-weight:600;font-size:0.95em;text-decoration:none;transition:all 0.3s;cursor:pointer;border:none}
+        .btn-primary{background:var(--primary);color:white;box-shadow:0 4px 15px rgba(37,99,235,0.3)}
+        .btn-primary:hover{background:#1d4ed8;transform:translateY(-2px);box-shadow:0 8px 25px rgba(37,99,235,0.4)}
+        .btn-outline{background:transparent;color:var(--primary);border:2px solid var(--primary)}
+        .btn-outline:hover{background:var(--primary);color:white}
+        /* Scroll Indicator */
+        .scroll-hint{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);animation:bounce 2s infinite}
+        @keyframes bounce{0%,20%,50%,80%,100%{transform:translateX(-50%) translateY(0)} 40%{transform:translateX(-50%) translateY(-15px)} 60%{transform:translateX(-50%) translateY(-7px)}}
+        .scroll-hint svg{width:32px;height:32px;stroke:var(--text-light)}
+        /* Stats Bar */
+        .stats-bar{position:relative;z-index:1;background:white;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:40px 20px}
+        .stats-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:40px;text-align:center}
+        .stat-item .number{font-size:2.5em;font-weight:700;color:var(--primary);margin-bottom:4px}
+        .stat-item .label{color:var(--text-light);font-size:0.9em}
+        /* Sections */
+        .section{position:relative;z-index:1;padding:80px 40px;max-width:1000px;margin:0 auto}
+        .section-title{font-size:2.5em;font-weight:700;color:var(--dark);margin-bottom:16px;text-align:center}
+        .section-subtitle{font-size:1.1em;color:var(--text-light);text-align:center;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto;font-weight:300}
+        /* Skills */
+        .skills-container{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:20px}
+        .skill-item{background:white;padding:20px 32px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid var(--border);font-weight:500;color:var(--text);display:flex;align-items:center;gap:12px;transition:all 0.3s}
+        .skill-item:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(37,99,235,0.15);border-color:var(--primary);color:var(--primary)}
+        .skill-item .dot{width:8px;height:8px;background:var(--primary);border-radius:50%}
+        /* Projects */
+        .projects-grid{display:grid;gap:24px}
+        .project-card{background:white;padding:32px;border-radius:20px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid var(--border);transition:all 0.4s;position:relative;overflow:hidden}
+        .project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),#7c3aed);transform:scaleX(0);transition:transform 0.4s;transform-origin:left}
+        .project-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.08)}
+        .project-card:hover::before{transform:scaleX(1)}
+        .project-header{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+        .project-number{display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--primary);color:white;border-radius:10px;font-weight:700;font-size:0.9em;flex-shrink:0}
+        .project-title a{font-size:1.3em;font-weight:600;color:var(--dark);text-decoration:none;transition:color 0.2s}
+        .project-title a:hover{color:var(--primary)}
+        .project-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+        .tag{font-size:0.75em;font-weight:600;padding:4px 12px;border-radius:20px;background:#eff6ff;color:var(--primary)}
+        .tag.tool{background:#f0fdf4;color:#16a34a}
+        .project-desc{color:var(--text-light);margin-bottom:16px}
+        .project-link{color:var(--primary);text-decoration:none;font-weight:600;font-size:0.9em;display:inline-flex;align-items:center;gap:6px;transition:gap 0.3s}
+        .project-link:hover{gap:12px}
+        /* Contact */
+        .contact-section{text-align:center;padding-bottom:40px}
+        .contact-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:32px}
+        .contact-card{background:white;padding:24px 40px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid var(--border);text-decoration:none;color:var(--text);font-weight:600;display:flex;align-items:center;gap:12px;transition:all 0.3s}
+        .contact-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(37,99,235,0.15);color:var(--primary)}
+        /* Footer */
+        footer{text-align:center;padding:40px 20px;color:var(--text-light);font-size:0.9em;border-top:1px solid var(--border);position:relative;z-index:1}
+        /* Animations */
+        .reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.4,0,0.2,1)}
+        .reveal.active{opacity:1;transform:translateY(0)}
+        .reveal-delay-1{transition-delay:0.1s}
+        .reveal-delay-2{transition-delay:0.2s}
+        .reveal-delay-3{transition-delay:0.3s}
+        .reveal-delay-4{transition-delay:0.4s}
+        /* Responsive */
+        @media(max-width:768px){
+            nav{padding:12px 20px}
+            .nav-links{gap:16px}
+            .nav-links a{font-size:0.8em}
+            .hero{padding:100px 20px 60px}
+            .section{padding:60px 20px}
+            .project-card{padding:24px}
+            .stats-grid{gap:20px;grid-template-columns:repeat(3,1fr)}
+            .stat-item .number{font-size:2em}
+        }
     </style>
 </head>
 <body>
-    <div class="hero">
+    <canvas id="particles"></canvas>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#" class="nav-logo">С.</a>
+        <div class="nav-links">
+            <a href="#about">Обо мне</a>
+            <a href="#projects">Проекты</a>
+            <a href="#contact">Контакты</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg"></div>
         <div class="hero-content">
-            <h1>👋 Привет, я Сергей</h1>
-            <div class="subtitle">Data Analyst · Превращаю данные в решения с помощью Python, SQL и BI</div>
-            <div class="contacts">
-                <a href="mailto:esacer2022@gmail.com">📧 Email</a>
-                <a href="https://github.com/esacer1989" target="_blank">🐙 GitHub</a>
-                <a href="https://t.me/Esacer" target="_blank">💬 Telegram</a>
+            <div class="hero-greeting reveal active">Добрый день!</div>
+            <h1 class="reveal active reveal-delay-1">Я <span>Сергей</span></h1>
+            <p class="subtitle reveal active reveal-delay-2">Data Analyst · Превращаю данные в решения с помощью Python, SQL и BI-инструментов</p>
+            <div class="hero-buttons reveal active reveal-delay-3">
+                <a href="#projects" class="btn btn-primary">📊 Мои проекты</a>
+                <a href="https://github.com/esacer1989" target="_blank" class="btn btn-outline">GitHub ↗</a>
             </div>
+        </div>
+        <div class="scroll-hint">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats-bar">
+        <div class="stats-grid">
+            <div class="stat-item reveal"><div class="number" data-count="9">0</div><div class="label">Проектов</div></div>
+            <div class="stat-item reveal reveal-delay-1"><div class="number" data-count="5">0</div><div class="label">Инструментов</div></div>
+            <div class="stat-item reveal reveal-delay-2"><div class="number" data-count="3">0</div><div class="label">Навыка анализа</div></div>
         </div>
     </div>
-    <main class="container">
-        <div class="stats">
-            <div class="stat-card animate-on-scroll"><div class="number">9+</div><div class="label">Проектов</div></div>
-            <div class="stat-card animate-on-scroll"><div class="number">5+</div><div class="label">Инструментов</div></div>
-            <div class="stat-card animate-on-scroll"><div class="number">6+</div><div class="label">Анализов данных</div></div>
+
+    <!-- About / Skills -->
+    <section class="section" id="about">
+        <h2 class="section-title reveal">Обо мне</h2>
+        <p class="section-subtitle reveal reveal-delay-1">Начинающий Data Analyst с уверенным знанием Python, SQL и Excel. Умею извлекать инсайты, проводить A/B тесты и строить дашборды.</p>
+        <div class="skills-container">
+            <div class="skill-item reveal"><span class="dot"></span>Python</div>
+            <div class="skill-item reveal reveal-delay-1"><span class="dot"></span>SQL</div>
+            <div class="skill-item reveal reveal-delay-2"><span class="dot"></span>Pandas</div>
+            <div class="skill-item reveal"><span class="dot"></span>SciPy</div>
+            <div class="skill-item reveal reveal-delay-1"><span class="dot"></span>Seaborn</div>
+            <div class="skill-item reveal reveal-delay-2"><span class="dot"></span>Excel</div>
+            <div class="skill-item reveal"><span class="dot"></span>Google Sheets</div>
+            <div class="skill-item reveal reveal-delay-1"><span class="dot"></span>A/B тесты</div>
+            <div class="skill-item reveal reveal-delay-2"><span class="dot"></span>Metabase</div>
         </div>
-        <div class="section animate-on-scroll">
-            <h2>📊 Обо мне</h2>
-            <p>Начинающий Data Analyst с уверенным знанием Python, SQL, Excel и Google Sheets. Умею извлекать инсайты из данных, проводить A/B тесты, строить дашборды и визуализировать результаты. Активно развиваюсь в аналитике и ищу первую работу в IT.</p>
-            <div class="skills" style="margin-top: 20px;">
-                <span class="skill">Python</span>
-                <span class="skill">SQL</span>
-                <span class="skill">Pandas</span>
-                <span class="skill">SciPy</span>
-                <span class="skill">Seaborn</span>
-                <span class="skill">Excel</span>
-                <span class="skill">Google Sheets</span>
-                <span class="skill">Power BI</span>
-                <span class="skill">Metabase</span>
-                <span class="skill">A/B тесты</span>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+        <h2 class="section-title reveal">Проекты</h2>
+        <p class="section-subtitle reveal reveal-delay-1">Реальные задачи и результаты аналитики</p>
+        <div class="projects-grid">
+            <div class="project-card reveal">
+                <div class="project-header">
+                    <div class="project-number">01</div>
+                    <div class="project-title"><a href="https://github.com/esacer1989/-" target="_blank">Анализ торговых точек</a></div>
+                </div>
+                <div class="project-tags"><span class="tag">Excel</span><span class="tag">Визуализация</span></div>
+                <p class="description">Проанализировал данные торговых точек: выявил зависимость продаж от расположения, рассчитал метрики эффективности, нашёл точки роста для увеличения выручки.</p>
+                <a href="https://github.com/esacer1989/-" target="_blank" class="project-link">Посмотреть →</a>
+            </div>
+            <div class="project-card reveal reveal-delay-1">
+                <div class="project-header">
+                    <div class="project-number">02</div>
+                    <div class="project-title"><a href="https://docs.google.com/spreadsheets/d/1UMRUQ_83eynuqJrsO6zmHX1cxbz62HA7SdEdUIBlYJo/edit?gid=1219983928" target="_blank">Дашборд маркетинга найма</a></div>
+                </div>
+                <div class="project-tags"><span class="tag tool">Google Sheets</span><span class="tag">KPI</span><span class="tag">Воронка найма</span></div>
+                <p class="description">Интерактивный дашборд для HR-маркетинга: KPI рекрутинга, воронка найма, стоимость привлечения кандидата. Решения по оптимизации бюджета.</p>
+                <a href="https://docs.google.com/spreadsheets/d/1UMRUQ_83eynuqJrsO6zmHX1cxbz62HA7SdEdUIBlYJo/edit?gid=1219983928" target="_blank" class="project-link">Посмотреть →</a>
+            </div>
+            <div class="project-card reveal reveal-delay-2">
+                <div class="project-header">
+                    <div class="project-number">03</div>
+                    <div class="project-title"><a href="https://github.com/esacer1989/2" target="_blank">Анализ мобильной игры</a></div>
+                </div>
+                <div class="project-tags"><span class="tag">Retention</span><span class="tag">LTV</span><span class="tag">ARPU</span></div>
+                <p class="description">Retention, LTV, ARPU, конверсия в покупки. Презентация с выводами и рекомендациями по монетизации и удержанию игроков.</p>
+                <a href="https://github.com/esacer1989/2" target="_blank" class="project-link">Посмотреть →</a>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-header">
+                    <div class="project-number">04</div>
+                    <div class="project-title"><a href="https://github.com/esacer1989/-a-SQL" target="_blank">SQL: Анализ данных</a></div>
+                </div>
+                <div class="project-tags"><span class="tag tool">SQL</span><span class="tag">Metabase</span></div>
+                <p class="description">SQL-запросы: фильтрация, агрегация, JOIN, оконные функции. Визуализация через Metabase.</p>
+                <a href="https://github.com/esacer1989/-a-SQL" target="_blank" class="project-link">Посмотреть →</a>
+            </div>
+            <div class="project-card reveal reveal-delay-1">
+                <div class="project-header">
+                    <div class="project-number">05</div>
+                    <div class="project-title"><a href="https://github.com/esacer1989/-Python" target="_blank">Анализ на Python</a></div>
+                </div>
+                <div class="project-tags"><span class="tag tool">Python</span><span class="tag">SciPy</span><span class="tag">Seaborn</span></div>
+                <p class="description">Статистический анализ: очистка данных, EDA, проверка гипотез через SciPy, визуализация распределений.</p>
+                <a href="https://github.com/esacer1989/-Python" target="_blank" class="project-link">Посмотреть →</a>
+            </div>
+            <div class="project-card reveal reveal-delay-2">
+                <div class="project-header">
+                    <div class="project-number">06</div>
+                    <div class="project-title"><a href="https://github.com/esacer1989/-1" target="_blank">Комплексный анализ</a></div>
+                </div>
+                <div class="project-tags"><span class="tag tool">Python</span><span class="tag tool">SQL</span><span class="tag">Excel</span></div>
+                <p class="description">Полный цикл: сбор → очистка → анализ → визуализация → выводы. Python + SQL + Excel в связке.</p>
+                <a href="https://github.com/esacer1989/-1" target="_blank" class="project-link">Посмотреть →</a>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-header">
+                    <div class="project-number">07</div>
+                    <div class="project-title"><a href="https://github.com/esacer1989/AB-" target="_blank">A/B тестирование</a></div>
+                </div>
+                <div class="project-tags"><span class="tag tool">Python</span><span class="tag">t-test</span><span class="tag">SciPy</span></div>
+                <p class="description">Статистическая значимость, p-value, доверительные интервалы, размер эффекта. Выводы для бизнеса.</p>
+                <a href="https://github.com/esacer1989/AB-" target="_blank" class="project-link">Посмотреть →</a>
+            </div>
+            <div class="project-card reveal reveal-delay-1">
+                <div class="project-header">
+                    <div class="project-number">08</div>
+                    <div class="project-title"><a href="https://github.com/esacer1989/-API-Yandex-." target="_blank">Яндекс API — Погода</a></div>
+                </div>
+                <div class="project-tags"><span class="tag tool">Python</span><span class="tag">API</span></div>
+                <p class="description">Получение данных о погоде через Яндекс API: парсинг JSON, сохранение в структурированном виде.</p>
+                <a href="https://github.com/esacer1989/-API-Yandex-." target="_blank" class="project-link">Посмотреть →</a>
+            </div>
+            <div class="project-card reveal reveal-delay-2">
+                <div class="project-header">
+                    <div class="project-number">09</div>
+                    <div class="project-title"><a href="https://github.com/esacer1989/-Deepseek-r1-OpenRouter" target="_blank">Чат-бот: DeepSeek R1</a></div>
+                </div>
+                <div class="project-tags"><span class="tag tool">Python</span><span class="tag">LLM</span><span class="tag">OpenRouter</span></div>
+                <p class="description">Чат-бот с бесплатной моделью DeepSeek R1 через OpenRouter API.</p>
+                <a href="https://github.com/esacer1989/-Deepseek-r1-OpenRouter" target="_blank" class="project-link">Посмотреть →</a>
             </div>
         </div>
-        <div class="section">
-            <h2>🚀 Проекты</h2>
-            <div class="project animate-on-scroll">
-                <div class="project-header"><h3><a href="https://github.com/esacer1989/-" target="_blank">1. Анализ торговых точек</a></h3></div>
-                <div class="meta"><span>📁 Excel</span><span>📊 Описательный анализ</span></div>
-                <p class="description">Проанализировал данные торговых точек: выявил зависимость продаж от расположения, рассчитал ключевые метрики эффективности каждой точки, нашёл точки роста для увеличения выручки.</p>
-                <div class="skills"><span class="skill">Excel</span><span class="skill">Анализ данных</span><span class="skill">Визуализация</span></div>
-            </div>
-            <div class="project animate-on-scroll">
-                <div class="project-header"><h3><a href="https://docs.google.com/spreadsheets/d/1UMRUQ_83eynuqJrsO6zmHX1cxbz62HA7SdEdUIBlYJo/edit?gid=1219983928" target="_blank">2. Дашборд маркетинга найма</a></h3></div>
-                <div class="meta"><span>📊 Google Sheets</span><span>📈 Бизнес-аналитика</span></div>
-                <p class="description">Создал интерактивный дашборд для HR-маркетинга: отслеживание KPI рекрутинга, воронка найма, стоимость привлечения кандидата, конверсия этапов. Позволяет руководству принимать решения по оптимизации бюджета найма.</p>
-                <div class="skills"><span class="skill">Google Sheets</span><span class="skill">Дашборды</span><span class="skill">KPI</span><span class="skill">Воронка</span></div>
-            </div>
-            <div class="project animate-on-scroll">
-                <div class="project-header"><h3><a href="https://github.com/esacer1989/2" target="_blank">3. Анализ мобильной игры</a></h3></div>
-                <div class="meta"><span>📱 GameDev</span><span>📊 Excel + PowerPoint</span></div>
-                <p class="description">Провёл анализ метрик мобильной игры: Retention (удержание), LTV, ARPU, конверсия в покупки. Подготовил презентацию с выводами и рекомендациями по монетизации и удержанию игроков.</p>
-                <div class="skills"><span class="skill">Excel</span><span class="skill">PowerPoint</span><span class="skill">Retention</span><span class="skill">LTV</span><span class="skill">ARPU</span></div>
-            </div>
-            <div class="project animate-on-scroll">
-                <div class="project-header"><h3><a href="https://github.com/esacer1989/-a-SQL" target="_blank">4. SQL: Анализ данных</a></h3></div>
-                <div class="meta"><span>🗃️ SQL</span><span>📊 Metabase</span></div>
-                <p class="description">Написал SQL-запросы для анализа бизнес-данных: фильтрация, агрегация, JOIN, группировка, оконные функции. Визуализировал результаты через Metabase.</p>
-                <div class="skills"><span class="skill">SQL</span><span class="skill">JOIN</span><span class="skill">Агрегация</span><span class="skill">Metabase</span></div>
-            </div>
-            <div class="project animate-on-scroll">
-                <div class="project-header"><h3><a href="https://github.com/esacer1989/-Python" target="_blank">5. Анализ на Python</a></h3></div>
-                <div class="meta"><span>🐍 Python</span><span>📊 SciPy + Seaborn</span></div>
-                <p class="description">Применил статистический анализ на Python: очистка данных, EDA (exploratory data analysis), проверка гипотез через SciPy, визуализация распределений и корреляций через Seaborn.</p>
-                <div class="skills"><span class="skill">Python</span><span class="skill">Pandas</span><span class="skill">SciPy</span><span class="skill">Seaborn</span><span class="skill">EDA</span></div>
-            </div>
-            <div class="project animate-on-scroll">
-                <div class="project-header"><h3><a href="https://github.com/esacer1989/-1" target="_blank">6. Учебный проект: Полный стек анализа</a></h3></div>
-                <div class="meta"><span>🔄 Энд-ту-энд</span><span>📊 Multiple Tools</span></div>
-                <p class="description">Комплексный проект: сбор данных → очистка → анализ → визуализация → выводы. Использовал Python, SQL, Excel в связке для полного цикла анализа данных.</p>
-                <div class="skills"><span class="skill">Python</span><span class="skill">SQL</span><span class="skill">Excel</span><span class="skill">SciPy</span></div>
-            </div>
-            <div class="project animate-on-scroll">
-                <div class="project-header"><h3><a href="https://github.com/esacer1989/AB-" target="_blank">7. A/B тестирование</a></h3></div>
-                <div class="meta"><span>🧪 Статистика</span><span>📊 Python</span></div>
-                <p class="description">Провёл анализ результатов A/B теста: проверка статистической значимости через t-тест, расчёт p-value, доверительных интервалов, определение размера эффекта. Визуализация результатов и формулировка выводов для бизнеса.</p>
-                <div class="skills"><span class="skill">Python</span><span class="skill">SciPy</span><span class="skill">A/B тесты</span><span class="skill">t-test</span><span class="skill">Визуализация</span></div>
-            </div>
-            <div class="project animate-on-scroll">
-                <div class="project-header"><h3><a href="https://github.com/esacer1989/-API-Yandex-." target="_blank">8. Яндекс API — Данные о погоде</a></h3></div>
-                <div class="meta"><span>🌤️ API</span><span>🐍 Python</span></div>
-                <p class="description">Написал скрипт для получения и обработки данных о погоде через Яндекс API: получение прогноза, парсинг JSON, сохранение в структурированном виде.</p>
-                <div class="skills"><span class="skill">Python</span><span class="skill">API</span><span class="skill">JSON</span><span class="skill">Requests</span></div>
-            </div>
-            <div class="project animate-on-scroll">
-                <div class="project-header"><h3><a href="https://github.com/esacer1989/-Deepseek-r1-OpenRouter" target="_blank">9. Чат-бот с DeepSeek R1 через OpenRouter</a></h3></div>
-                <div class="meta"><span>🤖 AI</span><span>🐍 Python</span></div>
-                <p class="description">Разработал чат-бота (плагин) с подключением к бесплатной модели DeepSeek R1 через OpenRouter API. Демонстрирует навыки работы с LLM API и построения разговорных интерфейсов.</p>
-                <div class="skills"><span class="skill">Python</span><span class="skill">LLM API</span><span class="skill">OpenRouter</span><span class="skill">DeepSeek</span></div>
-            </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact-section" id="contact">
+        <h2 class="section-title reveal">Давайте работать вместе</h2>
+        <p class="section-subtitle reveal reveal-delay-1">Открыт для предложений о работе. Готов к стажировкам и позициям Junior Data Analyst.</p>
+        <div class="contact-links reveal reveal-delay-2">
+            <a href="mailto:esacer2022@gmail.com" class="contact-card">📧 Email</a>
+            <a href="https://github.com/esacer1989" target="_blank" class="contact-card">🐙 GitHub</a>
+            <a href="https://t.me/Esacer" target="_blank" class="contact-card">💬 Telegram</a>
         </div>
-        <div class="section animate-on-scroll" style="text-align: center;">
-            <h2 style="border-bottom: none; text-align: center;">💬 Контакты</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 20px;">Открыт для предложений о работе. Готов к стажировкам и позициям Junior Data Analyst.</p>
-            <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-                <a href="mailto:esacer2022@gmail.com" style="color: var(--primary); text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid var(--primary); border-radius: 50px;">📧 Email</a>
-                <a href="https://github.com/esacer1989" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid var(--primary); border-radius: 50px;">🐙 GitHub</a>
-                <a href="https://t.me/Esacer" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid var(--primary); border-radius: 50px;">💬 Telegram</a>
-            </div>
-        </div>
-    </main>
-    <footer><p>© 2026 Сергей · Data Analyst · Создано с ❤️ и стремлением к данным</p></footer>
+    </section>
+
+    <footer>
+        <p>© 2026 Сергей · Data Analyst · Создано с ❤️ и стремлением к данным</p>
+    </footer>
+
     <script>
-        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } }); }, { threshold: 0.1 });
-        document.querySelectorAll('.animate-on-scroll').forEach(el => { observer.observe(el); });
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Reveal on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Counter animation
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if(e.isIntersecting) {
+                    const el = e.target;
+                    const target = parseInt(el.dataset.count);
+                    let current = 0;
+                    const increment = target / 40;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if(current >= target) { el.textContent = target + '+'; clearInterval(timer); }
+                        else { el.textContent = Math.floor(current); }
+                    }, 40);
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+        // Particles
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const PARTICLE_COUNT = 60;
+
+        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.radius = Math.random() * 2 + 1;
+                this.opacity = Math.random() * 0.3 + 0.1;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if(this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if(this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(37, 99, 235, ${this.opacity})`;
+                ctx.fill();
+            }
+        }
+
+        for(let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
+
+        function drawConnections() {
+            for(let i = 0; i < particles.length; i++) {
+                for(let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if(dist < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(192, 215, 255, ${0.15 * (1 - dist / 120)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            drawConnections();
+            requestAnimationFrame(animate);
+        }
+        animate();
     </script>
 </body>
 </html>
