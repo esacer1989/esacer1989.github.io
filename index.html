@@ -3,175 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Аналитик данных | Сергей</title>
-    <!-- Подключаем красивый шрифт -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Сергей — Data Analyst. Python, SQL, Pandas, A/B тесты, дашборды. Портфолио с реальными проектами.">
+    <meta name="keywords" content="Data Analyst, Python, SQL, Pandas, A/B тесты, аналитика данных">
+    <title>Сергей — Data Analyst | Портфолио</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        header {
-            text-align: center;
-            padding: 40px 0;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-        .subtitle {
-            font-size: 1.2em;
-            color: #7f8c8d;
-            margin-bottom: 30px;
-        }
-        .section {
-            background: white;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #3498db;
-            margin-top: 0;
-            border-bottom: 2px solid #ecf0f1;
-            padding-bottom: 10px;
-        }
-        .project {
-            margin-bottom: 25px;
-        }
-        .project h3 {
-            margin-bottom: 5px;
-        }
-        .project h3 a {
-            color: #2c3e50;
-            text-decoration: none;
-        }
-        .project h3 a:hover {
-            color: #3498db;
-        }
-        .project p {
-            color: #7f8c8d;
-            margin: 5px 0;
-        }
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        .skill {
-            background: #ecf0f1;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            color: #2c3e50;
-        }
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .contact-links a {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .contact-links a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #95a5a6;
-            font-size: 0.9em;
-        }
+        :root { --primary: #2563eb; --primary-light: #3b82f6; --bg: #f8fafc; --card-bg: #ffffff; --text: #1e293b; --text-secondary: #64748b; --border: #e2e8f0; --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); --shadow-hover: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1); --radius: 12px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-on-scroll { opacity: 0; animation: none; }
+        .animate-on-scroll.visible { animation: fadeInUp 0.6s ease forwards; }
+        .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 50%, #3b82f6 100%); color: white; text-align: center; padding: 80px 20px; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.08) 0%, transparent 60%); }
+        .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: 3em; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.02em; }
+        .hero .subtitle { font-size: 1.3em; font-weight: 300; opacity: 0.9; margin-bottom: 32px; }
+        .hero .contacts { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+        .hero .contacts a { color: white; text-decoration: none; font-weight: 600; padding: 10px 24px; border: 2px solid rgba(255,255,255,0.3); border-radius: 50px; transition: all 0.3s; }
+        .hero .contacts a:hover { background: white; color: var(--primary); border-color: white; }
+        .container { max-width: 960px; margin: 0 auto; padding: 40px 20px; }
+        .section { background: var(--card-bg); padding: 40px; margin-bottom: 32px; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border); }
+        .section h2 { color: var(--primary); font-size: 1.8em; font-weight: 700; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid var(--border); }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin-bottom: 32px; }
+        .stat-card { text-align: center; padding: 24px 16px; background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border); }
+        .stat-card .number { font-size: 2.5em; font-weight: 700; color: var(--primary); }
+        .stat-card .label { color: var(--text-secondary); font-size: 0.9em; margin-top: 4px; }
+        .project { margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+        .project:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .project-header h3 a { color: var(--text); text-decoration: none; font-size: 1.3em; font-weight: 600; transition: color 0.2s; }
+        .project-header h3 a:hover { color: var(--primary); }
+        .project .meta { display: flex; gap: 16px; color: var(--text-secondary); font-size: 0.9em; margin-bottom: 8px; flex-wrap: wrap; }
+        .project .description { color: var(--text-secondary); margin-bottom: 16px; }
+        .skills { display: flex; flex-wrap: wrap; gap: 8px; }
+        .skill { background: #eff6ff; color: var(--primary); padding: 4px 14px; border-radius: 20px; font-size: 0.85em; font-weight: 500; }
+        footer { text-align: center; padding: 32px 20px; color: var(--text-secondary); font-size: 0.9em; }
+        @media (max-width: 600px) { .hero h1 { font-size: 2em; } .hero .subtitle { font-size: 1.1em; } .section { padding: 24px; } .stats { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <div class="hero">
+        <div class="hero-content">
             <h1>👋 Привет, я Сергей</h1>
-            <div class="subtitle">Data Analyst | Превращаю данные в решения</div>
-            <div class="contact-links">
+            <div class="subtitle">Data Analyst · Превращаю данные в решения с помощью Python, SQL и BI</div>
+            <div class="contacts">
                 <a href="mailto:esacer2022@gmail.com">📧 Email</a>
                 <a href="https://github.com/esacer1989" target="_blank">🐙 GitHub</a>
+                <a href="https://t.me/Esacer" target="_blank">💬 Telegram</a>
             </div>
-        </header>
-
-        <div class="section">
+        </div>
+    </div>
+    <main class="container">
+        <div class="stats">
+            <div class="stat-card animate-on-scroll"><div class="number">9+</div><div class="label">Проектов</div></div>
+            <div class="stat-card animate-on-scroll"><div class="number">5+</div><div class="label">Инструментов</div></div>
+            <div class="stat-card animate-on-scroll"><div class="number">6+</div><div class="label">Анализов данных</div></div>
+        </div>
+        <div class="section animate-on-scroll">
             <h2>📊 Обо мне</h2>
-            <p>Аналитик данных с опытом работы. Использую Python, SQL и современные инструменты BI для поиска инсайтов и поддержки бизнес-решений.</p>
-            <div class="skills">
+            <p>Начинающий Data Analyst с уверенным знанием Python, SQL, Excel и Google Sheets. Умею извлекать инсайты из данных, проводить A/B тесты, строить дашборды и визуализировать результаты. Активно развиваюсь в аналитике и ищу первую работу в IT.</p>
+            <div class="skills" style="margin-top: 20px;">
                 <span class="skill">Python</span>
                 <span class="skill">SQL</span>
                 <span class="skill">Pandas</span>
+                <span class="skill">SciPy</span>
+                <span class="skill">Seaborn</span>
                 <span class="skill">Excel</span>
-                <span class="skill">Power BI</span>
                 <span class="skill">Google Sheets</span>
+                <span class="skill">Power BI</span>
+                <span class="skill">Metabase</span>
+                <span class="skill">A/B тесты</span>
             </div>
         </div>
-
         <div class="section">
             <h2>🚀 Проекты</h2>
-            
-            <div class="project">
-                <h3><a href="https://github.com/esacer1989/-">Анализ данных в Excel</a></h3>
-                <p><strong>Кратко:</strong> анализ торговых точек, поиск инсайтов.</p>
-                <p><strong>Стек:</strong> Excel</p>
+            <div class="project animate-on-scroll">
+                <div class="project-header"><h3><a href="https://github.com/esacer1989/-" target="_blank">1. Анализ торговых точек</a></h3></div>
+                <div class="meta"><span>📁 Excel</span><span>📊 Описательный анализ</span></div>
+                <p class="description">Проанализировал данные торговых точек: выявил зависимость продаж от расположения, рассчитал ключевые метрики эффективности каждой точки, нашёл точки роста для увеличения выручки.</p>
+                <div class="skills"><span class="skill">Excel</span><span class="skill">Анализ данных</span><span class="skill">Визуализация</span></div>
             </div>
-            
-            <div class="project">
-                <h3><a href="https://docs.google.com/spreadsheets/d/1UMRUQ_83eynuqJrsO6zmHX1cxbz62HA7SdEdUIBlYJo/edit?gid=1219983928#gid=1219983928">Дашборд маркетинга найма на работу</a></h3>
-                <p><strong>Кратко:</strong> Разработал интерактивный дашборд в Google Sheets.</p>
-                <p><strong>Стек:</strong> Google Sheets</p>
+            <div class="project animate-on-scroll">
+                <div class="project-header"><h3><a href="https://docs.google.com/spreadsheets/d/1UMRUQ_83eynuqJrsO6zmHX1cxbz62HA7SdEdUIBlYJo/edit?gid=1219983928" target="_blank">2. Дашборд маркетинга найма</a></h3></div>
+                <div class="meta"><span>📊 Google Sheets</span><span>📈 Бизнес-аналитика</span></div>
+                <p class="description">Создал интерактивный дашборд для HR-маркетинга: отслеживание KPI рекрутинга, воронка найма, стоимость привлечения кандидата, конверсия этапов. Позволяет руководству принимать решения по оптимизации бюджета найма.</p>
+                <div class="skills"><span class="skill">Google Sheets</span><span class="skill">Дашборды</span><span class="skill">KPI</span><span class="skill">Воронка</span></div>
             </div>
-          
-            <div class="project">
-                <h3><a href="https://github.com/esacer1989/2">Анализ мобильной игры</a></h3>
-                <p><strong>Кратко:</strong> Анализ показателей. Презентация по итогам.</p>
-                <p><strong>Стек:</strong> Excel, PowerPoint</p>
+            <div class="project animate-on-scroll">
+                <div class="project-header"><h3><a href="https://github.com/esacer1989/2" target="_blank">3. Анализ мобильной игры</a></h3></div>
+                <div class="meta"><span>📱 GameDev</span><span>📊 Excel + PowerPoint</span></div>
+                <p class="description">Провёл анализ метрик мобильной игры: Retention (удержание), LTV, ARPU, конверсия в покупки. Подготовил презентацию с выводами и рекомендациями по монетизации и удержанию игроков.</p>
+                <div class="skills"><span class="skill">Excel</span><span class="skill">PowerPoint</span><span class="skill">Retention</span><span class="skill">LTV</span><span class="skill">ARPU</span></div>
             </div>
-          
-            <div class="project">
-                <h3><a href="https://github.com/esacer1989/-a-SQL">Пример работы в SQL</a></h3>
-                <p><strong>Кратко:</strong> Анализ в SQL.</p>
-                <p><strong>Стек:</strong> SQL, Metabase</p>
-             </div>
-
-            <div class="project">
-                <h3><a href="https://github.com/esacer1989/-Python">Пример анализа в Python</a></h3>
-                <p><strong>Кратко:</strong> Анализ в Python.</p>
-                <p><strong>Стек:</strong> Python, SciPy, Seaborn</p>
-             </div>
-
-            <div class="project">
-                <h3><a href="https://github.com/esacer1989/-1">Учебный опыт</a></h3>
-                <p><strong>Кратко:</strong> Полный стек знаний.</p>
-                <p><strong>Стек:</strong> Python, SciPy, Excel, SQL</p>
-             </div>
-            
-            <div class="project">
-                <h3><a href="https://github.com/esacer1989/AB-">Примеры A/B тестирования</a></h3>
-                <p><strong>Кратко:</strong> Провел анализ результатов A/B теста.</p>
-                <p><strong>Стек:</strong> Python, SciPy, Seaborn</p>
+            <div class="project animate-on-scroll">
+                <div class="project-header"><h3><a href="https://github.com/esacer1989/-a-SQL" target="_blank">4. SQL: Анализ данных</a></h3></div>
+                <div class="meta"><span>🗃️ SQL</span><span>📊 Metabase</span></div>
+                <p class="description">Написал SQL-запросы для анализа бизнес-данных: фильтрация, агрегация, JOIN, группировка, оконные функции. Визуализировал результаты через Metabase.</p>
+                <div class="skills"><span class="skill">SQL</span><span class="skill">JOIN</span><span class="skill">Агрегация</span><span class="skill">Metabase</span></div>
+            </div>
+            <div class="project animate-on-scroll">
+                <div class="project-header"><h3><a href="https://github.com/esacer1989/-Python" target="_blank">5. Анализ на Python</a></h3></div>
+                <div class="meta"><span>🐍 Python</span><span>📊 SciPy + Seaborn</span></div>
+                <p class="description">Применил статистический анализ на Python: очистка данных, EDA (exploratory data analysis), проверка гипотез через SciPy, визуализация распределений и корреляций через Seaborn.</p>
+                <div class="skills"><span class="skill">Python</span><span class="skill">Pandas</span><span class="skill">SciPy</span><span class="skill">Seaborn</span><span class="skill">EDA</span></div>
+            </div>
+            <div class="project animate-on-scroll">
+                <div class="project-header"><h3><a href="https://github.com/esacer1989/-1" target="_blank">6. Учебный проект: Полный стек анализа</a></h3></div>
+                <div class="meta"><span>🔄 Энд-ту-энд</span><span>📊 Multiple Tools</span></div>
+                <p class="description">Комплексный проект: сбор данных → очистка → анализ → визуализация → выводы. Использовал Python, SQL, Excel в связке для полного цикла анализа данных.</p>
+                <div class="skills"><span class="skill">Python</span><span class="skill">SQL</span><span class="skill">Excel</span><span class="skill">SciPy</span></div>
+            </div>
+            <div class="project animate-on-scroll">
+                <div class="project-header"><h3><a href="https://github.com/esacer1989/AB-" target="_blank">7. A/B тестирование</a></h3></div>
+                <div class="meta"><span>🧪 Статистика</span><span>📊 Python</span></div>
+                <p class="description">Провёл анализ результатов A/B теста: проверка статистической значимости через t-тест, расчёт p-value, доверительных интервалов, определение размера эффекта. Визуализация результатов и формулировка выводов для бизнеса.</p>
+                <div class="skills"><span class="skill">Python</span><span class="skill">SciPy</span><span class="skill">A/B тесты</span><span class="skill">t-test</span><span class="skill">Визуализация</span></div>
+            </div>
+            <div class="project animate-on-scroll">
+                <div class="project-header"><h3><a href="https://github.com/esacer1989/-API-Yandex-." target="_blank">8. Яндекс API — Данные о погоде</a></h3></div>
+                <div class="meta"><span>🌤️ API</span><span>🐍 Python</span></div>
+                <p class="description">Написал скрипт для получения и обработки данных о погоде через Яндекс API: получение прогноза, парсинг JSON, сохранение в структурированном виде.</p>
+                <div class="skills"><span class="skill">Python</span><span class="skill">API</span><span class="skill">JSON</span><span class="skill">Requests</span></div>
+            </div>
+            <div class="project animate-on-scroll">
+                <div class="project-header"><h3><a href="https://github.com/esacer1989/-Deepseek-r1-OpenRouter" target="_blank">9. Чат-бот с DeepSeek R1 через OpenRouter</a></h3></div>
+                <div class="meta"><span>🤖 AI</span><span>🐍 Python</span></div>
+                <p class="description">Разработал чат-бота (плагин) с подключением к бесплатной модели DeepSeek R1 через OpenRouter API. Демонстрирует навыки работы с LLM API и построения разговорных интерфейсов.</p>
+                <div class="skills"><span class="skill">Python</span><span class="skill">LLM API</span><span class="skill">OpenRouter</span><span class="skill">DeepSeek</span></div>
             </div>
         </div>
-
-        <footer>
-            © 2026 Сергей · Создано с ❤️ для портфолио
-        </footer>
-    </div>
+        <div class="section animate-on-scroll" style="text-align: center;">
+            <h2 style="border-bottom: none; text-align: center;">💬 Контакты</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">Открыт для предложений о работе. Готов к стажировкам и позициям Junior Data Analyst.</p>
+            <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                <a href="mailto:esacer2022@gmail.com" style="color: var(--primary); text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid var(--primary); border-radius: 50px;">📧 Email</a>
+                <a href="https://github.com/esacer1989" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid var(--primary); border-radius: 50px;">🐙 GitHub</a>
+                <a href="https://t.me/Esacer" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid var(--primary); border-radius: 50px;">💬 Telegram</a>
+            </div>
+        </div>
+    </main>
+    <footer><p>© 2026 Сергей · Data Analyst · Создано с ❤️ и стремлением к данным</p></footer>
+    <script>
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } }); }, { threshold: 0.1 });
+        document.querySelectorAll('.animate-on-scroll').forEach(el => { observer.observe(el); });
+    </script>
 </body>
 </html>
